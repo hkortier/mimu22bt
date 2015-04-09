@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
 # A sample application to read bluetooth data over serial port
-# Usage: read_serial device_name baudrate
-# (e.g. read_serial /dev/tty.USB0 115200)
+# Usage: read_serial device_name baudrate outfile numbytes
+# (e.g. read_serial /dev/tty.USB0 115200 out.txt 1000)
 
 import sys
 import serial
