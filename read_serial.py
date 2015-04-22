@@ -64,7 +64,7 @@ def calc_disp(sensor_data, theta):
 	sin_theta = math.sin(theta)
 	cos_theta = math.cos(theta)
 
-	dx = d0 * cos_theta + d1 * sin_theta
+	dx = d0 * cos_theta - d1 * sin_theta
 	dy = d0 * sin_theta + d1 * cos_theta
 	dz = d2
 	dp = d3
