@@ -19,7 +19,6 @@ def open_device(device, rate):
 
 def read_device(device,length):
 	buffer = []
-	device.flushInput()
 	buffer = device.read(length)
 	return buffer
 
@@ -112,8 +111,9 @@ else :
 	zpos = 0.0   # z-coord in user's reference frame
 	phi  = 0.0   # Angular position around Z-axis in user's reference frame
 
-	# this is a workaround for taking care of unintended 4 bytes, sent by
-	# mimu22bt when it starts communication. Doing a dummy read
+	# FIX ME 
+	# Currently resorting to a workaround to take care of 4 bytes, sent by
+	# mimu22bt when it starts communication. Doing a dummy read as of now.
 
 	dummy = read_device(btserial, 4)
 
