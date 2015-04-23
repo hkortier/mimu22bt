@@ -112,6 +112,11 @@ else :
 	zpos = 0.0   # z-coord in user's reference frame
 	phi  = 0.0   # Angular position around Z-axis in user's reference frame
 
+	# this is a workaround for taking care of unintended 4 bytes, sent by
+	# mimu22bt when it starts communication. Doing a dummy read
+
+	dummy = read_device(btserial, 4)
+
 	while (count < numbytes):
 		buffer = read_device(btserial, pkt_len)
 		valid, packet_info, payload = parse_pkt(buffer)
